@@ -4,7 +4,6 @@
 num1 = float(input("Enter the first number: "))
 num2 = float(input("Enter the second number: "))
 
-# Ask the user to input the operation
 operation = input("Enter the operation (+, -, *, /): ")
 
 # Perform the operation based on the user's input
