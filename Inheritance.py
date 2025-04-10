@@ -93,3 +93,83 @@ if __name__ == "__main__":
     print(wolverine.use_power(1))  # Notice the different energy cost
     print(wolverine.mutate_further())
     print(wolverine)
+
+
+
+
+
+
+
+    class Animal:
+    def __init__(self, name):
+        self.name = name
+    
+    def move(self):
+        raise NotImplementedError("Subclasses must implement this method")
+    
+    def speak(self):
+        raise NotImplementedError("Subclasses must implement this method")
+
+class Bird(Animal):
+    def move(self):
+        return f"{self.name} the bird is flying! 🕊️"
+    
+    def speak(self):
+        return "Chirp chirp!"
+
+class Fish(Animal):
+    def move(self):
+        return f"{self.name} the fish is swimming! 🐠"
+    
+    def speak(self):
+        return "Blub blub!"
+
+class Snake(Animal):
+    def move(self):
+        return f"{self.name} the snake is slithering! 🐍"
+    
+    def speak(self):
+        return "Hiss hiss!"
+
+class Dog(Animal):
+    def move(self):
+        return f"{self.name} the dog is running! 🐕"
+    
+    def speak(self):
+        return "Woof woof!"
+
+class Kangaroo(Animal):
+    def move(self):
+        return f"{self.name} the kangaroo is hopping! 🦘"
+    
+    def speak(self):
+        return "Chortle chortle!"
+
+# Function demonstrating polymorphism
+def animal_show(animals):
+    for animal in animals:
+        print(animal.move())
+        print(animal.speak())
+        print()
+
+# Example usage
+if __name__ == "__main__":
+    animals = [
+        Bird("Tweety"),
+        Fish("Nemo"),
+        Snake("Viper"),
+        Dog("Buddy"),
+        Kangaroo("Joey")
+    ]
+    
+    animal_show(animals)
+    
+    # Another example with the same interface but different implementations
+    print("\nLet's see them move in different ways:")
+    for animal in animals:
+        if isinstance(animal, Bird):
+            print(f"{animal.name} soars high in the sky!")
+        elif isinstance(animal, Fish):
+            print(f"{animal.name} dives deep in the ocean!")
+        else:
+            print(animal.move())
